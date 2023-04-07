@@ -22,3 +22,5 @@ urlpatterns = [
     path('stuinfo/<int:pk>', views.student_detail),
      path('stuinfo/', views.student_list),
 ]
+
+
