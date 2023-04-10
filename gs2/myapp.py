@@ -1,7 +1,7 @@
 import requests
 import json
 
-URL = ""
+URL = "http://127.0.0.1:8000/studentapi/"
 
 # ? if __name__ == "__main__":
 
@@ -17,4 +17,23 @@ def get_data(id = None):
 
     print(data)
 
-get_data()
+# get_data()
+
+def post_data():
+    data = {
+        'name' : 'Anurag Doe',
+        'email' : 'anurag.itmatters@gmail.com',
+        'city' : 'San Francisco',
+    }
+
+    json_data = json.dumps(data)
+
+    r = requests.post(url = URL, data = json_data)
+    data = r.json()
+    print(data)
+    
+
+
+
+
+
