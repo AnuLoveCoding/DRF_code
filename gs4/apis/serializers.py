@@ -19,4 +19,11 @@ class StudentSerializer(serializers.Serializer):
         instance.save()
         return instance
 
+    # feild lavel validation;
+    
+    def validate_roll(self, value):
+        if value >= 200:
+            raise serializers.ValidationError('Roll must be less than 200')
+        return value
+
 
