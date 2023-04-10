@@ -19,18 +19,39 @@ def get_data(id = None):
 
 # get_data()
 
-def post_data():
-    data = {
-        'name' : 'Anurag Doe',
-        'email' : 'anurag.itmatters@gmail.com',
-        'city' : 'San Francisco',
-    }
+    def post_data():
+        data = {
+            'name' : 'Anurag Doe',
+            'roll' : 116009,
+            'city' : 'San Francisco',
+        }
 
-    json_data = json.dumps(data)
+        json_data = json.dumps(data)
 
-    r = requests.post(url = URL, data = json_data)
-    data = r.json()
-    print(data)
+        r = requests.post(url = URL, data = json_data)
+        data = r.json()
+        print(data)
+
+    post_data()
+
+
+    def update_data():
+        data = {
+            'id' : 5,
+            'name' : 'Anurag Doe',
+            'roll' : 105,
+            'city' : 'San Francisco',
+        }
+
+        json_data = json.dumps(data)
+
+        r = requests.put(url = URL, data = json_data)
+        data = r.json()
+        print(data)
+
+    update_data()
+
+
     
 
 
